@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "json-server --watch db.json --port 5007",
-    "img-server": "node img-server.js"
+    "server": "json-server --watch db.json --port 5007"
   },
   "author": "",
   "license": "ISC",
