@@ -2,13 +2,13 @@ import { Box } from "@mui/material";
 import React from "react";
 
 type PlayerStatProps = {
-  health: number;
-  level: number;
-  defense: number;
-  strength: number;
+  health: number | undefined;
+  level: number | undefined;
+  defense: number | undefined;
+  strength: number | undefined;
   attack: {
-    min: number;
-    max: number;
+    min: number | undefined;
+    max: number | undefined;
   };
 };
 

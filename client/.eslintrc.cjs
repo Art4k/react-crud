@@ -22,6 +22,7 @@ module.exports = {
         unnamedComponents: "arrow-function",
       },
     ],
+    "object-curly-newline": ["error", { multiline: true, minProperties: 100 }],
     "@typescript-eslint/quotes": [
       "error",
       "double",
