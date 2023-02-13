@@ -20,7 +20,7 @@ const getMonstersData = async () => {
 };
 
 const getItemsData = async () => {
-  const { data: getItem } = await api.get<ItemModel[]>("/monsters");
+  const { data: getItem } = await api.get<ItemModel[]>("/items");
   return getItem;
 };
 
