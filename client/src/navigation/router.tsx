@@ -1,17 +1,22 @@
-import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
-import NavbarLayout from 'components/layout/navbar-layout';
-import HomePage from 'pages/home-page';
-import routes from './routes';
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import NavbarLayout from "components/layout/navbar-layout";
+import HomePage from "pages/home-page";
+import PlayerInventory from "pages/inventory";
+import routes from "./routes";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <NavbarLayout />,
     children: [
       {
         path: routes.HomePage,
         element: <HomePage />,
+      },
+      {
+        path: routes.PlayerInventory,
+        element: <PlayerInventory />,
       },
     ],
   },
