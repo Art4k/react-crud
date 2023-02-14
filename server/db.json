@@ -11,7 +11,11 @@
         "minAttack": 1,
         "maxAttack": 3
       },
-      "monsterImage": ["/assets/monsters/Rat.gif", "/assets/monsters/Cave_Rat.gif", "/assets/monsters/Mutated_Rat.gif"]
+      "src": [
+        "/assets/monsters/Rat.gif",
+        "/assets/monsters/Cave_Rat.gif",
+        "/assets/monsters/Mutated_Rat.gif"
+      ]
     },
     {
       "id": 2,
@@ -24,7 +28,11 @@
         "minAttack": 1,
         "maxAttack": 2
       },
-      "monsterImage": ["/assets/monsters/Bug.gif", "/assets/monsters/Brimstone_Bug.gif", "/assets/monsters/Major_Bug.gif"]
+      "src": [
+        "/assets/monsters/Bug.gif",
+        "/assets/monsters/Brimstone_Bug.gif",
+        "/assets/monsters/Major_Bug.gif"
+      ]
     },
     {
       "id": 3,
@@ -37,7 +45,11 @@
         "minAttack": 2,
         "maxAttack": 5
       },
-      "monsterImage": ["/assets/monsters/Spider.gif", "/assets/monsters/Poison_Spider.gif", "/assets/monsters/Tarantula.gif"]
+      "src": [
+        "/assets/monsters/Spider.gif",
+        "/assets/monsters/Poison_Spider.gif",
+        "/assets/monsters/Tarantula.gif"
+      ]
     }
   ],
   "characters": [
@@ -52,7 +64,11 @@
         "minAttack": 1,
         "maxAttack": 5
       },
-      "characterImage": ["/assets/players/Player.gif", "/assets/players/Player1.gif", "/assets/players/Player2.gif"]
+      "src": [
+        "/assets/players/Player.gif",
+        "/assets/players/Player1.gif",
+        "/assets/players/Player2.gif"
+      ]
     }
   ],
   "items": [
@@ -65,7 +81,11 @@
         "minAttack": 1,
         "maxAttack": 5
       },
-      "itemImage": ["/assets/items/Sword.gif", "/assets/items/Broadsword.gif", "/assets/items/Blacksteel_Sword.gif"]
+      "src": [
+        "/assets/items/Sword.gif",
+        "/assets/items/Broadsword.gif",
+        "/assets/items/Blacksteel_Sword.gif"
+      ]
     }
   ]
 }
