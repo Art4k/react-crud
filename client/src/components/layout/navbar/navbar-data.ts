@@ -4,7 +4,6 @@ import type LinkData from "./link-data";
 
 export const linksData: LinkData[] = [
   { link: routes.HomePage, text: "Home" },
-  { link: routes.PlayerInventory, text: "Inventory" },
 ];
 
 export const linksGroups = [];

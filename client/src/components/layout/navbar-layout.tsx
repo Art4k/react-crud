@@ -1,7 +1,7 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { Box } from '@mui/material';
-import Navbar from './navbar/navbar';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Box } from "@mui/material";
+import Navbar from "./navbar/navbar";
 
 const NavbarLayout = () => (
   <Box component="div">

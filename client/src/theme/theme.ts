@@ -1,6 +1,5 @@
-import { createTheme } from '@mui/material';
+import { createTheme } from "@mui/material";
 
-// sukuria temą, default temos pagrindu.
 const theme = createTheme({
   zIndex: {
     appBar: 1250,

@@ -7,7 +7,12 @@
       "authorId": 1,
       "likes": 1,
       "isDeleted": false,
-      "createdAt": 1676463137848
+      "createdAt": 1676463137848,
+      "src": [
+        "/img/strings-43431.jpg",
+        "/img/stones-167089_640.jpg",
+        "/img/coconut-481871.jpg"
+      ]
     }
   ],
   "users": [

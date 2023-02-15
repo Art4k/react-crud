@@ -9,25 +9,20 @@ const api = axios.create({
   },
 });
 
-const getPlayersData = async () => {
-  const { data: getPlayer } = await api.get<PlayerModel[]>("/characters");
-  return getPlayer;
+const getServerStatus = (serverStatus: number) => {
+  if (serverStatus !== 200) {
+    throw new Error("Server error: failed to fecth data");
+  }
 };
 
-const getMonstersData = async () => {
-  const { data: getMonster } = await api.get<MonsterModel[]>("/monsters");
-  return getMonster;
-};
-
-const getItemsData = async () => {
-  const { data: getItem } = await api.get<ItemModel[]>("/items");
-  return getItem;
+const getAllPosts = async () => {
+  const { status, data } = await api.get<PostModel[]>("/posts");
+  getServerStatus(status);
+  return data;
 };
 
 const ApiService = {
-  getPlayersData,
-  getMonstersData,
-  getItemsData,
+  getAllPosts,
 };
 
 export default ApiService;

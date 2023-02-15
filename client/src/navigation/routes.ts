@@ -1,6 +1,5 @@
 const routes = {
   HomePage: "/",
-  PlayerInventory: "/inventory",
 } as const;
 
 export type Routes = typeof routes;
