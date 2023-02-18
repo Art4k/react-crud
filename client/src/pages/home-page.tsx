@@ -1,14 +1,8 @@
 import React from "react";
-import { Box } from "@mui/material";
+import PostBox from "components/post";
 
 const HomePage = () => (
-  <Box
-    sx={{
-      display: "flex",
-      flexDirection: "row",
-      alignItems: "flex-start",
-    }}
-  />
+  <PostBox />
 );
 
 export default HomePage;
