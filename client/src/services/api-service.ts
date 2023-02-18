@@ -15,14 +15,25 @@ const getServerStatus = (serverStatus: number) => {
   }
 };
 
+// Posts api
+
 const getAllPosts = async () => {
   const { status, data } = await api.get<PostModel[]>("/posts");
   getServerStatus(status);
   return data;
 };
 
+// Users api
+
+const getSingleUser = async (id: number | string) => {
+  const { status, data } = await api.get<UserModel>(`/users/${id}`);
+  getServerStatus(status);
+  return data;
+};
+
 const ApiService = {
   getAllPosts,
+  getSingleUser,
 };
 
 export default ApiService;
