@@ -22,7 +22,7 @@ const PostBox = () => {
     <Box>
       <CreatePost updatedPost={updatedPost} />
       {posts
-        .map((post) => <SinglePost key={post.id} {...post} />).reverse()}
+        .map((post) => <SinglePost updatedPost={updatedPost} key={post.id} {...post} />).reverse()}
     </Box>
   );
 };
