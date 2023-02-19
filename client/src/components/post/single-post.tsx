@@ -7,10 +7,12 @@ import {
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import UserInfo from "./userInfo";
+import PostOptions from "./options-button";
 
-type PostBoxProps = PostModel;
+type PostBoxProps = PostModel & { updatedPost: any };
 
 const SinglePost: React.FC<PostBoxProps> = ({
+  id,
   title,
   text,
   authorId,
@@ -18,15 +20,17 @@ const SinglePost: React.FC<PostBoxProps> = ({
   isDeleted,
   createdAt,
   src,
+  updatedPost,
 }) => {
   const postDate = new Date(createdAt);
   return (
     <Stack>
       {isDeleted}
-      <Box>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <UserInfo authorId={authorId} created={postDate.toLocaleString("lt-LT")} />
-        <Box>{likes}</Box>
+        <PostOptions updateList={updatedPost} id={id} title={title} text={text} />
       </Box>
+      <Box>{likes}</Box>
       <Box>{title}</Box>
       <Box>{text}</Box>
       <Box>

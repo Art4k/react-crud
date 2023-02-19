@@ -28,6 +28,11 @@ const createPost = async (postData: PostModel) => {
   return data;
 };
 
+const updatePost = async (id: number, text: string, title: string) => {
+  const { data } = await api.patch<PostModel>(`/posts/${id}`, { text, title });
+  return data;
+};
+
 // Users api
 
 const getSingleUser = async (id: number | string) => {
@@ -40,6 +45,7 @@ const ApiService = {
   getAllPosts,
   getSingleUser,
   createPost,
+  updatePost,
 };
 
 export default ApiService;
