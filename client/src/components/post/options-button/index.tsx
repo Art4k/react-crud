@@ -4,8 +4,8 @@ import {
 import React from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditPost from "../edit-post";
+import DeletePost from "../delete-post";
 
-const options = ["Edit", "Delete"];
 const ITEM_HEIGHT = 48;
 
 type PostOptionProps = {
@@ -20,6 +20,7 @@ const PostOptions: React.FC<PostOptionProps> = ({
 }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [toggleEdit, setToggleEdit] = React.useState(false);
+  const [toggleDelete, setToggleDelete] = React.useState(false);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -34,7 +35,7 @@ const PostOptions: React.FC<PostOptionProps> = ({
     <>
       <Box>
         <IconButton
-          sx={{ display: toggleEdit ? "none" : "block" }}
+          sx={{ display: toggleEdit || toggleDelete ? "none" : "block" }}
           aria-label="more"
           id="long-button"
           aria-controls={open ? "long-menu" : undefined}
@@ -59,12 +60,12 @@ const PostOptions: React.FC<PostOptionProps> = ({
             },
           }}
         >
-          {options.map((option) => (
-            <MenuItem key={option} onClick={() => { setToggleEdit(!toggleEdit); handleClose(); }}>
-              {option}
-            </MenuItem>
-          ))}
-          {}
+          <MenuItem onClick={() => { setToggleEdit(!toggleEdit); handleClose(); }}>
+            Edit
+          </MenuItem>
+          <MenuItem onClick={() => { setToggleDelete(!toggleDelete); handleClose(); }}>
+            Delete
+          </MenuItem>
         </Menu>
       </Box>
       {toggleEdit && (
@@ -74,6 +75,14 @@ const PostOptions: React.FC<PostOptionProps> = ({
           id={id}
           title={title}
           text={text}
+        />
+      )}
+      {toggleDelete && (
+        <DeletePost
+          updatedPost={updatedPost}
+          setToggleDelete={() => setToggleDelete(!toggleDelete)}
+          id={id}
+          title={title}
         />
       )}
     </>

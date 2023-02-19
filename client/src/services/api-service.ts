@@ -33,6 +33,10 @@ const updatePost = async (id: number, text: string, title: string) => {
   return data;
 };
 
+const deletePost = async (id: number) => {
+  await api.delete<PostModel>(`/posts/${id}`);
+};
+
 // Users api
 
 const getSingleUser = async (id: number | string) => {
@@ -46,6 +50,7 @@ const ApiService = {
   getSingleUser,
   createPost,
   updatePost,
+  deletePost,
 };
 
 export default ApiService;
