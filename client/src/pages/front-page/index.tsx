@@ -1,8 +1,11 @@
 import React from "react";
+import { Container } from "@mui/material";
 import PostBox from "components/post";
 
 const HomePage = () => (
-  <PostBox />
+  <Container>
+    <PostBox />
+  </Container>
 );
 
 export default HomePage;

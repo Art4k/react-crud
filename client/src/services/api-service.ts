@@ -23,6 +23,11 @@ const getAllPosts = async () => {
   return data;
 };
 
+const createPost = async (postData: PostModel) => {
+  const { data } = await api.post<PostModel>("/posts", { ...postData });
+  return data;
+};
+
 // Users api
 
 const getSingleUser = async (id: number | string) => {
@@ -34,6 +39,7 @@ const getSingleUser = async (id: number | string) => {
 const ApiService = {
   getAllPosts,
   getSingleUser,
+  createPost,
 };
 
 export default ApiService;

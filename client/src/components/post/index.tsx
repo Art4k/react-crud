@@ -1,6 +1,7 @@
 import React from "react";
 import ApiService from "services/api-service";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
+import CreatePost from "components/post/create-post";
 import SinglePost from "./single-post";
 
 const PostBox = () => {
@@ -13,10 +14,16 @@ const PostBox = () => {
     })();
   }, []);
 
+  const updatedPost = (newPosts: PostModel[]) => {
+    setPosts(newPosts);
+  };
+
   return (
-    <Container>
-      {posts.map((post) => <SinglePost key={post.id} {...post} />)}
-    </Container>
+    <Box>
+      <CreatePost updatedPost={updatedPost} />
+      {posts
+        .map((post) => <SinglePost key={post.id} {...post} />).reverse()}
+    </Box>
   );
 };
 
