@@ -5,6 +5,8 @@ import {
   Button,
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useNavigate } from "react-router-dom";
+import routes from "navigation/routes";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,7 +14,6 @@ import UserInfo from "./userInfo";
 import PostOptions from "./options-button";
 
 type PostBoxProps = PostModel & { updatedPost: any };
-
 const SinglePost: React.FC<PostBoxProps> = ({
   id,
   title,
@@ -24,6 +25,7 @@ const SinglePost: React.FC<PostBoxProps> = ({
   updatedPost,
 }) => {
   const postDate = new Date(createdAt);
+  const navigate = useNavigate();
   return (
     <Stack>
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
@@ -34,7 +36,7 @@ const SinglePost: React.FC<PostBoxProps> = ({
         Patinka
         {likes}
       </Button>
-      <Box>{title}</Box>
+      <Button onClick={() => navigate(routes.SinglePost.createLink(id))}>{title}</Button>
       <Box>{text}</Box>
       <Box>
         <Swiper

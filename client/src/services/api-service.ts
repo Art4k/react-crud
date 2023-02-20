@@ -23,6 +23,12 @@ const getAllPosts = async () => {
   return data;
 };
 
+const getSinglePost = async (id: number) => {
+  const { status, data } = await api.get<PostModel>(`/posts/${id}`);
+  getServerStatus(status);
+  return data;
+};
+
 const createPost = async (postData: PostModel) => {
   const { data } = await api.post<PostModel>("/posts", { ...postData });
   return data;
@@ -51,6 +57,7 @@ const ApiService = {
   createPost,
   updatePost,
   deletePost,
+  getSinglePost,
 };
 
 export default ApiService;
