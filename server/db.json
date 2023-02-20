@@ -9,9 +9,9 @@
       "isDeleted": false,
       "createdAt": 1676463137848,
       "src": [
-        "/img/strings-43431.jpg",
-        "/img/stones-167089_640.jpg",
-        "/img/coconut-481871.jpg"
+        "/img/cat_640.png",
+        "/img/flower_640.jpg",
+        "/img/cactus_640.jpg"
       ]
     },
     {
@@ -23,9 +23,9 @@
       "isDeleted": false,
       "createdAt": 1676463137848,
       "src": [
-        "/img/strings-43431.jpg",
         "/img/stones-167089_640.jpg",
-        "/img/coconut-481871.jpg"
+        "/img/coconut-481871.jpg",
+        "/img/strings-43431.jpg"
       ]
     }
   ],
