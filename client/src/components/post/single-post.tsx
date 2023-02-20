@@ -2,7 +2,9 @@ import React from "react";
 import {
   Stack,
   Box,
+  Button,
 } from "@mui/material";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -17,7 +19,6 @@ const SinglePost: React.FC<PostBoxProps> = ({
   text,
   authorId,
   likes,
-  isDeleted,
   createdAt,
   src,
   updatedPost,
@@ -25,12 +26,14 @@ const SinglePost: React.FC<PostBoxProps> = ({
   const postDate = new Date(createdAt);
   return (
     <Stack>
-      {isDeleted}
       <Box sx={{ display: "flex", justifyContent: "space-between" }}>
         <UserInfo authorId={authorId} created={postDate.toLocaleString("lt-LT")} />
         <PostOptions updateList={updatedPost} id={id} title={title} text={text} />
       </Box>
-      <Box>{likes}</Box>
+      <Button variant="outlined" startIcon={<FavoriteBorderIcon />}>
+        Patinka
+        {likes}
+      </Button>
       <Box>{title}</Box>
       <Box>{text}</Box>
       <Box>
